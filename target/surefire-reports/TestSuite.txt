@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 30.266 s <<< FAILURE! - in TestSuite
+wishListControl(com.softwaretestingboard.magento.miniproject.CompleteTest)  Time elapsed: 6.204 s  <<< FAILURE!
+java.lang.AssertionError: expected [2 items] but found [1 item]
+	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControl(CompleteTest.java:166)
+

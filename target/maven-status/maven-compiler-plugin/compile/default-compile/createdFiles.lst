@@ -1,0 +1,9 @@
+pageObjects/RegistrationPage.class
+pageObjects/WishListPage.class
+com/softwaretestingboard/magento/miniproject/App.class
+base/DataGeneration.class
+pageObjects/SignIn.class
+pageObjects/FiltersPage.class
+base/BasePage.class
+base/RDGpage.class
+pageObjects/ShoppingCartPage.class

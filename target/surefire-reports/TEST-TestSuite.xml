@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="30.266" tests="5" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/user/Desktop/Resources/workspace/miniproject/target/test-classes:/Users/user/Desktop/Resources/workspace/miniproject/target/classes:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/user/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/user/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/user/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/user/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/user/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/user/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/user/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/user/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/user/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/user/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/user/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/user/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/user/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/user/.m2/repository/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar:/Users/user/.m2/repository/io/codearte/jfairy/jfairy/0.5.9/jfairy-0.5.9.jar:/Users/user/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/user/.m2/repository/org/yaml/snakeyaml/1.18/snakeyaml-1.18.jar:/Users/user/.m2/repository/com/google/inject/extensions/guice-assistedinject/4.1.0/guice-assistedinject-4.1.0.jar:/Users/user/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/user/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar:/Users/user/.m2/repository/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/Users/user/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/Users/user/.m2/repository/org/iban4j/iban4j/3.2.1/iban4j-3.2.1.jar:/Users/user/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0.jar:/Users/user/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/user/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/user/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/user/.m2/repository/net/andreinc/mockneat/0.4.8/mockneat-0.4.8.jar:/Users/user/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/user/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/Users/user/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/Users/user/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/Users/user/.m2/repository/net/andreinc/aleph/0.1.1/aleph-0.1.1.jar:/Users/user/.m2/repository/net/andreinc/markovneat/1.8/markovneat-1.8.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AL"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/user/Desktop/Resources/workspace/miniproject/target/surefire/surefirebooter5650761604816509516.jar /Users/user/Desktop/Resources/workspace/miniproject/target/surefire 2022-11-06T17-03-47_963-jvmRun1 surefire5596511649632632014tmp surefire_04478882251309704211tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/user/Desktop/Resources/workspace/miniproject/target/test-classes:/Users/user/Desktop/Resources/workspace/miniproject/target/classes:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/user/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/user/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/user/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/user/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/user/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/user/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/user/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/user/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/user/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/user/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/user/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/user/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/user/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/user/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/user/.m2/repository/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar:/Users/user/.m2/repository/io/codearte/jfairy/jfairy/0.5.9/jfairy-0.5.9.jar:/Users/user/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/user/.m2/repository/org/yaml/snakeyaml/1.18/snakeyaml-1.18.jar:/Users/user/.m2/repository/com/google/inject/extensions/guice-assistedinject/4.1.0/guice-assistedinject-4.1.0.jar:/Users/user/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/Users/user/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar:/Users/user/.m2/repository/org/reflections/reflections/0.9.11/reflections-0.9.11.jar:/Users/user/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar:/Users/user/.m2/repository/org/iban4j/iban4j/3.2.1/iban4j-3.2.1.jar:/Users/user/.m2/repository/com/google/inject/guice/4.1.0/guice-4.1.0.jar:/Users/user/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/user/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/user/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/user/.m2/repository/net/andreinc/mockneat/0.4.8/mockneat-0.4.8.jar:/Users/user/.m2/repository/org/apache/commons/commons-text/1.9/commons-text-1.9.jar:/Users/user/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/Users/user/.m2/repository/com/github/mifmif/generex/1.0.2/generex-1.0.2.jar:/Users/user/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar:/Users/user/.m2/repository/net/andreinc/aleph/0.1.1/aleph-0.1.1.jar:/Users/user/.m2/repository/net/andreinc/markovneat/1.8/markovneat-1.8.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/user"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-10-19"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/user/Desktop/Resources/workspace/miniproject"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/user/Desktop/Resources/workspace/miniproject/target/surefire/surefirebooter5650761604816509516.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
+    <property name="user.name" value="user"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.2.1"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/user/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/xk/d_2_kg7n7mzbtg744fqlslgc0000gn/T/"/>
+    <property name="java.version" value="17.0.1"/>
+    <property name="user.dir" value="/Users/user/Desktop/Resources/workspace/miniproject"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/user/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.1+12-LTS-39"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="RegistrationTest" classname="com.softwaretestingboard.magento.miniproject.CompleteTest" time="10.057"/>
+  <testcase name="LogInTest" classname="com.softwaretestingboard.magento.miniproject.CompleteTest" time="2.649"/>
+  <testcase name="CheckPageFilters" classname="com.softwaretestingboard.magento.miniproject.CompleteTest" time="3.312"/>
+  <testcase name="wishListControl" classname="com.softwaretestingboard.magento.miniproject.CompleteTest" time="6.204">
+    <failure message="expected [2 items] but found [1 item]" type="java.lang.AssertionError">java.lang.AssertionError: expected [2 items] but found [1 item]
+	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControl(CompleteTest.java:166)
+</failure>
+    <system-out><![CDATA[Success,the number is increased
+true
+true
+1 item
+]]></system-out>
+  </testcase>
+  <testcase name="ShopCardTests" classname="com.softwaretestingboard.magento.miniproject.CompleteTest" time="3.513"/>
+</testsuite>
