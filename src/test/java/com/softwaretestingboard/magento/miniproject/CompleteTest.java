@@ -16,6 +16,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageObjects.*;
 
@@ -23,6 +24,9 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+@Listeners(resources.Listeners.class)
 
 @Test
 public class CompleteTest extends BasePage  {
@@ -44,6 +48,7 @@ public class CompleteTest extends BasePage  {
 		driver = getDriver();
 		driver.manage().window().fullscreen();
 		driver.get(getUrl());
+		
 	}
 
 	@BeforeClass
@@ -74,12 +79,13 @@ public class CompleteTest extends BasePage  {
 		registrationPage.clickNewsLetter();
 		registrationPage.clickSubmit();
 
-		Thread.sleep(2000);
+		
 		String pageTitle = driver.getTitle();
 		assertEquals(pageTitle,"My Account Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
 		System.out.println(pageTitle);
-		boolean successMsg = driver.findElement(By.cssSelector("[data-ui-id='message-success']")).isDisplayed();
-		System.out.println(successMsg);
+		assertTrue(registrationPage.messageDisplayed());
+	
+		//System.out.println(successMsg);
 
 		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -103,14 +109,17 @@ public class CompleteTest extends BasePage  {
 		String actualRes="Welcome, Gloria Shehaj!";
 		assertEquals(expectedRes, actualRes);
 		System.out.println(expectedRes); 
-		//WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
-		//JavascriptExecutor executor = (JavascriptExecutor)driver;
-		//executor.executeScript("arguments[0].click();", (element));
-
-		//Thread.sleep(2000);
-		//WebDriverWait wait = new WebDriverWait(driver, 40); 
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]")));
-		//signin.clickSingOut();
+		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", (element));
+		WebDriverWait wait = new WebDriverWait(driver, 40); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]")));
+		signIn.clickSignOut();
+		signIn.clickSignInBtn();
+		signIn.enterEmailAndPassword(email,"Test12345");
+		signIn.clickSingInSubmit();
+		Thread.sleep(1000);
+		signIn.clickUserName();
 
 	}
 	@Test (priority =3)
@@ -152,13 +161,13 @@ public class CompleteTest extends BasePage  {
 
 		wishListPage = new WishListPage(driver);
 
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
 
 		wishListPage.hoverFistElementclickWishList();
 		boolean SuccessMsgFE =driver.findElement(By.cssSelector("div[role='alert'] > .message.message-success.success")).isDisplayed();
 		System.out.println(SuccessMsgFE);
 
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
 
 		//WebDriverWait wait = new WebDriverWait(driver,10);
 		driver.get("https://magento.softwaretestingboard.com/women/tops-women/jackets-women.html");
@@ -176,9 +185,11 @@ public class CompleteTest extends BasePage  {
 	    executor.executeScript("arguments[0].click();", (element));
 	    //driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	    driver.navigate().refresh();
-		System.out.println(wishListPage.getItemsNumber());
-		String expectedItems = "2 items";
-		assertEquals(wishListPage.getItemsNumber(),expectedItems);
+		System.out.println(wishListPage.getItemsNumberInformation());
+		//String expectedItems = "2 items";
+		//WebDriverWait wait = new WebDriverWait(driver, 20); 
+		//wait.until(ExpectedConditions.textToBe(By.className(".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist  .counter.qty"), ("2 items")));
+		assertEquals(wishListPage.getItemsNumberInformation(), 2);
 
 
 	}
@@ -204,17 +215,17 @@ public class CompleteTest extends BasePage  {
 		filtersPage.selectSecondPrice();
 
 		shoppingCart = new ShoppingCartPage(driver);
-		shoppingCart.hoverFistElementclickSizeMedium();
-		shoppingCart.hoverFirstElementclickAddToCart();
+		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+		shoppingCart.hoverFistElementClickSizeAndAddToShop();
+		boolean successMsgFe =driver.findElement(By.cssSelector("div[role='alert']")).isDisplayed();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        shoppingCart.clikshoppingCartLink();
+        String shoppingCartPageTitle=driver.getTitle();
+		assertEquals("Shopping Cart Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites",shoppingCartPageTitle);
 
-
-
-
+        
+			
 	}
-
-
-
-
 
 }
 
@@ -223,7 +234,7 @@ public class CompleteTest extends BasePage  {
 		
 		String pageTitle=driver.getTitle();
 
-		Assert.assertEquals("Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites",pageTitle);
+		Assert.assertEquals("Shopping Cart Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites",pageTitle);
 
 */
 	

@@ -9,18 +9,39 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">33,278</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">53,066</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.softwaretestingboard.magento.miniproject.CompleteTest</td><td><a href="#m0">wishListControl</a></td><td rowspan="1">1667754385439</td><td rowspan="1">7809</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.softwaretestingboard.magento.miniproject.CompleteTest</td><td><a href="#m1">CheckPageFilters</a></td><td rowspan="1">1667754382098</td><td rowspan="1">3338</td></tr><tr class="passedeven"><td><a href="#m2">LogInTest</a></td><td rowspan="1">1667754377728</td><td rowspan="1">4368</td></tr><tr class="passedeven"><td><a href="#m3">RegistrationTest</a></td><td rowspan="1">1667754367342</td><td rowspan="1">10382</td></tr><tr class="passedeven"><td><a href="#m4">ShopCardTests</a></td><td rowspan="1">1667754393251</td><td rowspan="1">3488</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.softwaretestingboard.magento.miniproject.CompleteTest</td><td><a href="#m0">wishListControl</a></td><td rowspan="1">1667833750120</td><td rowspan="1">18344</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.softwaretestingboard.magento.miniproject.CompleteTest</td><td><a href="#m1">CheckPageFilters</a></td><td rowspan="1">1667833746674</td><td rowspan="1">3444</td></tr><tr class="passedeven"><td><a href="#m2">LogInTest</a></td><td rowspan="1">1667833737252</td><td rowspan="1">9420</td></tr><tr class="passedeven"><td><a href="#m3">RegistrationTest</a></td><td rowspan="1">1667833728225</td><td rowspan="1">9023</td></tr><tr class="passedeven"><td><a href="#m4">ShopCardTests</a></td><td rowspan="1">1667833768903</td><td rowspan="1">8761</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.softwaretestingboard.magento.miniproject.CompleteTest#wishListControl</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [2 items] but found []
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at org.testng.Assert.assertEquals(Assert.java:639)
-	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControl(CompleteTest.java:181)
+<h2>Default test</h2><h3 id="m0">com.softwaretestingboard.magento.miniproject.CompleteTest#wishListControl</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;body &gt; div.page-wrapper &gt; header &gt; div.panel.wrapper &gt; div &gt; ul &gt; li.customer-welcome.active &gt; div &gt; ul &gt; li.link.wishlist &gt; a &gt; span&quot;}
+  (Session info: chrome=107.0.5304.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Users-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:1496:e696:2036:5cad%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.2.1&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:55773}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b69f1ee277892bddc8e0a3ec78bfe8ee
+*** Element info: {Using=css selector, value=body &gt; div.page-wrapper &gt; header &gt; div.panel.wrapper &gt; div &gt; ul &gt; li.customer-welcome.active &gt; div &gt; ul &gt; li.link.wishlist &gt; a &gt; span}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
+	at pageObjects.WishListPage.getItemsNumberInformation(WishListPage.java:92)
+	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControl(CompleteTest.java:188)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

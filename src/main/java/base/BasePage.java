@@ -41,6 +41,7 @@ public class BasePage {
 
 		driver.manage().window().fullscreen();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
 
 		return driver;
 	}
@@ -52,8 +53,8 @@ public class BasePage {
 	
 	
 
-	public void takeSnapShot(WebDriver webdriver) throws IOException {
-		File srcFile = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
+	public void takeSnapShot(String name) throws IOException {
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
 		File destFile = new File(System.getProperty("user.dir") + "/target/screenshots/"
 				+ timestamp() + ".png");

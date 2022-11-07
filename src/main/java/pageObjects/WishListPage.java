@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,11 +34,12 @@ public class WishListPage {
 	@FindBy(css="[data-bind='scope\\: \\'messages\\''] .messages")
 	WebElement successMsgWishList;
 	
-	@FindBy(css=".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist  .counter.qty")
-	WebElement wishlistItems;
+	//@FindBy(css="#wishlist-view-form > div.products-grid.wishlist >ol > li")
+	//List<WebElement> wishlistItems;
 
-	@FindBy(css=".panel [href='https\\:\\/\\/magento\\.softwaretestingboard\\.com\\/wishlist\\/']")
-	WebElement wishListonProfile;
+	@FindBy(css="body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome.active > div > ul > li.link.wishlist > a > span")
+	 WebElement wishListItemsNumber;
+	
 	
 	
 			
@@ -49,48 +52,46 @@ public class WishListPage {
 		
 	  
     }
-		public void hoverFistElementclickWishList(){
-		Actions hover = new Actions (driver);
-		hover.moveToElement(firstElementontheList).moveToElement(fistElementWishButton).click().build().perform();
-		
-		}
-		
-		public void clickFirstElement() {
-		firstElementontheList.click();
-		}
-		
-		
-		public void clickSecondElement() {
-			secondElementontheListe.click();
-		}
-		
-		public void clickAddToWishList() {
-			wishButtonFirstElement.click();
-			
-		}
-		public void clickWishElement() {
-			fistElementWishButton.click();
-		}
-		
-		public void hoverSecondElementclickWishList() {
-			
-			Actions hover = new Actions(driver);
-			hover.moveToElement(secondElementontheListe).moveToElement(secondElementWishButton).click().build().perform();
-		}
-		
-		
-		public String getSuccessMsgWishList() {
-			return successMsgWishList.getText();
-		}
-		
-		public String getItemsNumber() {
-			return wishlistItems.getText();
-		}
-	   
+    public void hoverFistElementclickWishList(){
+    	Actions hover = new Actions (driver);
+    	hover.moveToElement(firstElementontheList).moveToElement(fistElementWishButton).click().build().perform();
 
-		public void clickWishListonProfile() {
-			wishListonProfile.click();;
-		}
+    }
+
+    public void clickFirstElement() {
+    	firstElementontheList.click();
+    }
+
+
+    public void clickSecondElement() {
+    	secondElementontheListe.click();
+    }
+
+    public void clickAddToWishList() {
+    	wishButtonFirstElement.click();
+
+    }
+    public void clickWishElement() {
+    	fistElementWishButton.click();
+    }
+
+    public void hoverSecondElementclickWishList() {
+
+    	Actions hover = new Actions(driver);
+    	hover.moveToElement(secondElementontheListe).moveToElement(secondElementWishButton).click().build().perform();
+    }
+
+
+    public String getSuccessMsgWishList() {
+    	return successMsgWishList.getText();
+    }
+
+    //public int getItemsNumber() {
+    	//return wishlistItems.size();
+    public String getItemsNumberInformation() {
+    	return wishListItemsNumber.getText();
+    }
+
 	  
 }
 	

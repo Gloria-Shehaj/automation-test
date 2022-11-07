@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
@@ -25,13 +26,16 @@ public class RegistrationPage {
 	By ConfirmPassword = By.xpath("//input[@id='password-confirmation']");
 	
 	By SubmitBtnAcc = By.xpath("//button[@title='Create an Account']");
-     
 	
-	Actions action;
+	By SuccessMessage  = By.cssSelector("[data-ui-id='message-success']");
+	
+	
+	
+	
 	public RegistrationPage(WebDriver driver) {
 		this.driver = driver;
 	PageFactory.initElements(driver, this);
-	action = new Actions(driver);
+	
 	
 	}
 	
@@ -55,5 +59,10 @@ public void clickNewsLetter() {
 
 public void clickSubmit() {
 	driver.findElement(SubmitBtnAcc).click();
+}
+
+public Boolean messageDisplayed() {
+	Boolean status = driver.findElement(SuccessMessage).isDisplayed();
+	return status;
 }
 }
