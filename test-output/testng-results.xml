@@ -2,42 +2,42 @@
 <testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-07T16:08:44 CET" name="Default suite" finished-at="2022-11-07T16:09:37 CET" duration-ms="53066">
+  <suite started-at="2022-11-07T22:58:37 CET" name="Default suite" finished-at="2022-11-07T22:59:35 CET" duration-ms="58419">
     <groups>
     </groups>
-    <test started-at="2022-11-07T16:08:44 CET" name="Default test" finished-at="2022-11-07T16:09:37 CET" duration-ms="53066">
+    <test started-at="2022-11-07T22:58:37 CET" name="Default test" finished-at="2022-11-07T22:59:35 CET" duration-ms="58419">
       <class name="com.softwaretestingboard.magento.miniproject.CompleteTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:08:44 CET" name="setup" finished-at="2022-11-07T16:08:48 CET" duration-ms="3433" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:58:37 CET" name="setup" finished-at="2022-11-07T22:58:44 CET" duration-ms="7346" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="generateData()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:08:48 CET" name="generateData" finished-at="2022-11-07T16:08:48 CET" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="generateData()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:58:44 CET" name="generateData" finished-at="2022-11-07T22:58:44 CET" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateData -->
-        <test-method signature="RegistrationTest()[pri:1, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:08:48 CET" name="RegistrationTest" finished-at="2022-11-07T16:08:57 CET" duration-ms="9023" status="PASS">
+        <test-method signature="RegistrationTest()[pri:1, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:58:44 CET" name="RegistrationTest" finished-at="2022-11-07T22:58:53 CET" duration-ms="8735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RegistrationTest -->
-        <test-method signature="LogInTest()[pri:2, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:08:57 CET" name="LogInTest" finished-at="2022-11-07T16:09:06 CET" duration-ms="9420" status="PASS">
+        <test-method signature="LogInTest()[pri:2, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:58:53 CET" name="LogInTest" finished-at="2022-11-07T22:59:02 CET" duration-ms="9041" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogInTest -->
-        <test-method signature="CheckPageFilters()[pri:3, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:09:06 CET" name="CheckPageFilters" finished-at="2022-11-07T16:09:10 CET" duration-ms="3444" status="PASS">
+        <test-method signature="CheckPageFilters()[pri:3, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:59:02 CET" name="CheckPageFilters" finished-at="2022-11-07T22:59:06 CET" duration-ms="3720" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckPageFilters -->
-        <test-method signature="wishListControl()[pri:4, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:09:10 CET" name="wishListControl" finished-at="2022-11-07T16:09:28 CET" duration-ms="18344" status="FAIL">
+        <test-method signature="wishListControlTest()[pri:4, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:59:06 CET" name="wishListControlTest" finished-at="2022-11-07T22:59:24 CET" duration-ms="18155" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome.active > div > ul > li.link.wishlist > a > span"}
   (Session info: chrome=107.0.5304.87)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Users-MacBook-Pro.local', ip: 'fe80:0:0:0:1496:e696:2036:5cad%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '17.0.1'
+System info: host: 'Users-MacBook-Pro.local', ip: 'fd9c:69d1:b3a5:e600:430:4951:aa90:8bda%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:55773}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b69f1ee277892bddc8e0a3ec78bfe8ee
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:57371}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 32619e2e65673fec5368373b4c5f105b
 *** Element info: {Using=css selector, value=body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome.active > div > ul > li.link.wishlist > a > span}]]>
             </message>
             <full-stacktrace>
@@ -45,10 +45,10 @@ Session ID: b69f1ee277892bddc8e0a3ec78bfe8ee
   (Session info: chrome=107.0.5304.87)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Users-MacBook-Pro.local', ip: 'fe80:0:0:0:1496:e696:2036:5cad%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '17.0.1'
+System info: host: 'Users-MacBook-Pro.local', ip: 'fd9c:69d1:b3a5:e600:430:4951:aa90:8bda%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.2.1', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:55773}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b69f1ee277892bddc8e0a3ec78bfe8ee
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:57371}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 32619e2e65673fec5368373b4c5f105b
 *** Element info: {Using=css selector, value=body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome.active > div > ul > li.link.wishlist > a > span}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
@@ -69,7 +69,7 @@ at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(Def
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
 at pageObjects.WishListPage.getItemsNumberInformation(WishListPage.java:92)
-at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControl(CompleteTest.java:188)
+at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControlTest(CompleteTest.java:202)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,12 +103,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- wishListControl -->
-        <test-method signature="ShopCardTests()[pri:5, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:09:28 CET" name="ShopCardTests" finished-at="2022-11-07T16:09:37 CET" duration-ms="8761" status="PASS">
+        </test-method> <!-- wishListControlTest -->
+        <test-method signature="ShopCardTests()[pri:5, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:59:24 CET" name="ShopCardTests" finished-at="2022-11-07T22:59:35 CET" duration-ms="10771" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShopCardTests -->
-        <test-method is-config="true" signature="end()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T16:09:37 CET" name="end" finished-at="2022-11-07T16:09:37 CET" duration-ms="165" status="PASS">
+        <test-method is-config="true" signature="end()[pri:0, instance:com.softwaretestingboard.magento.miniproject.CompleteTest@7219ec67]" started-at="2022-11-07T22:59:35 CET" name="end" finished-at="2022-11-07T22:59:35 CET" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->

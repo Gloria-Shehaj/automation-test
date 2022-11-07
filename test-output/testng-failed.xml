@@ -5,8 +5,8 @@
     <classes>
       <class name="com.softwaretestingboard.magento.miniproject.CompleteTest">
         <methods>
-          <include name="wishListControl"/>
           <include name="end"/>
+          <include name="wishListControlTest"/>
           <include name="setup"/>
           <include name="generateData"/>
         </methods>

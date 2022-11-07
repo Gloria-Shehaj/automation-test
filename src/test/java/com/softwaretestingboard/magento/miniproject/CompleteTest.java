@@ -21,6 +21,7 @@ import org.testng.annotations.Test;
 import pageObjects.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
@@ -138,14 +139,27 @@ public class CompleteTest extends BasePage  {
 		filtersPage.clickColorMenu();
 		filtersPage.clickBlueColor();
 		System.out.println(filtersPage.getSizeOfProductsDisplayed());
+		
+		
+		int actualBlueElements = 0;
+		for (WebElement item : filtersPage.getListOfSellingProducts()) {
+			WebElement blueDiv =  item.findElement(By.xpath("//div[contains(@class,'selected') and @option-label='Blue']"));
+			if(blueDiv != null)
+				actualBlueElements++;
+			
+			//*[@id="maincontent"]/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[3]/div[2]/div
+		    //System.out.println(item); 
+		}
+		assertEquals(filtersPage.getSizeOfProductsDisplayed(), actualBlueElements);
+	
 		filtersPage.openPriceFilters();
 		filtersPage.selectSecondPrice();
 		System.out.println(filtersPage.getSizeOfProductsDisplayed());
 		int expectedResult= 2;
-		assertEquals(expectedResult,filtersPage.getSizeOfProductsDisplayed());
+		assertEquals(filtersPage.getSizeOfProductsDisplayed(), expectedResult);
 	}
     @Test(priority = 4)
-	public void wishListControl() throws InterruptedException {
+	public void wishListControlTest() throws InterruptedException {
 
 		filtersPage = new FiltersPage(driver);
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
