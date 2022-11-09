@@ -2,6 +2,7 @@ package com.softwaretestingboard.magento.miniproject;
 
 import base.BasePage;
 import base.DataGeneration;
+import base.PriceCheck;
 import base.RDGpage;
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -73,6 +75,9 @@ public class CompleteTest extends BasePage  {
     @Test(priority= 1)
 	public void RegistrationTest() throws InterruptedException {
 		driver.manage().window().maximize();
+		
+		//String num = "$80.20";
+		//Double d = PriceCheck.convertToNumber(num);
 
 		registrationPage = new RegistrationPage(driver);
 		registrationPage.clickCreateAccount();
@@ -84,17 +89,13 @@ public class CompleteTest extends BasePage  {
 		String pageTitle = driver.getTitle();
 		assertEquals(pageTitle,"My Account Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
 		System.out.println(pageTitle);
+		
 		assertTrue(registrationPage.messageDisplayed());
-	
-		//System.out.println(successMsg);
-
+		
 		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", (element));
-
-		Thread.sleep(2000);
-		WebDriverWait wait = new WebDriverWait(driver, 40); 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]")));
+		
 		signIn = new SignIn (driver);
 		signIn.clickSignOut();    		
 	} 
@@ -104,23 +105,23 @@ public class CompleteTest extends BasePage  {
 		signIn.clickSignInBtn();
 		signIn.enterEmailAndPassword(email,"Test12345");
 		signIn.clickSingInSubmit();
+		      
 		Thread.sleep(1000);
 		signIn.clickUserName();
-		String expectedRes =driver.findElement(By.xpath("//span[@class=\"logged-in\"]")).getAttribute("innerHTML");
+		String expectedRes =signIn.userNameCheck();
 		String actualRes="Welcome, Gloria Shehaj!";
 		assertEquals(expectedRes, actualRes);
 		System.out.println(expectedRes); 
-		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", (element));
-		WebDriverWait wait = new WebDriverWait(driver, 40); 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]")));
+		
+		signIn.dropDown();
+		
 		signIn.clickSignOut();
+		
 		signIn.clickSignInBtn();
 		signIn.enterEmailAndPassword(email,"Test12345");
 		signIn.clickSingInSubmit();
-		Thread.sleep(1000);
-		signIn.clickUserName();
+		
+		//signIn.clickUserName();
 
 	}
 	@Test (priority =3)
@@ -138,6 +139,7 @@ public class CompleteTest extends BasePage  {
 
 		filtersPage.clickColorMenu();
 		filtersPage.clickBlueColor();
+		
 		System.out.println(filtersPage.getSizeOfProductsDisplayed());
 		
 		
@@ -147,16 +149,27 @@ public class CompleteTest extends BasePage  {
 			if(blueDiv != null)
 				actualBlueElements++;
 			
-			//*[@id="maincontent"]/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[3]/div[2]/div
-		    //System.out.println(item); 
+			
 		}
 		assertEquals(filtersPage.getSizeOfProductsDisplayed(), actualBlueElements);
-	
+ 
+		
 		filtersPage.openPriceFilters();
 		filtersPage.selectSecondPrice();
 		System.out.println(filtersPage.getSizeOfProductsDisplayed());
 		int expectedResult= 2;
 		assertEquals(filtersPage.getSizeOfProductsDisplayed(), expectedResult);
+		
+		int elementWithSelectedPrice = 0 ;
+		for(WebElement item : filtersPage.getListOfSellingProducts()) {
+			
+			   String priceStr = item.findElement(By.cssSelector(".price-wrapper > .price")).getText();
+			   Double fixPrice = PriceCheck.convertToNumber(priceStr);
+			   System.out.print(fixPrice);
+			   if (fixPrice > 50 & fixPrice < 59.99 )
+			      elementWithSelectedPrice ++;
+
+			}
 	}
     @Test(priority = 4)
 	public void wishListControlTest() throws InterruptedException {
@@ -175,7 +188,7 @@ public class CompleteTest extends BasePage  {
 
 		wishListPage = new WishListPage(driver);
 
-		
+		Thread.sleep(1000);
 
 		wishListPage.hoverFistElementclickWishList();
 		boolean SuccessMsgFE =driver.findElement(By.cssSelector("div[role='alert'] > .message.message-success.success")).isDisplayed();
@@ -191,22 +204,42 @@ public class CompleteTest extends BasePage  {
 		boolean SuccessMsgSE =driver.findElement(By.cssSelector("div[role='alert'] > .message.message-success.success")).isDisplayed();
 		System.out.println(SuccessMsgSE);
 
-		//registrationPage= new RegistrationPage(driver);
-
-		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		driver.navigate().refresh();
+		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 	    WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", (element));
-	    //driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	    driver.navigate().refresh();
+	    //driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	    
 		System.out.println(wishListPage.getItemsNumberInformation());
-		//String expectedItems = "2 items";
-		//WebDriverWait wait = new WebDriverWait(driver, 20); 
-		//wait.until(ExpectedConditions.textToBe(By.className(".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist  .counter.qty"), ("2 items")));
-		assertEquals(wishListPage.getItemsNumberInformation(), 2);
+		String expectedItems = "2 items";
+		//wait.until(ExpectedConditions.textToBe(By.cssSelector(".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist > a > span"), ("2 items")));
+		assertEquals(wishListPage.getItemsNumberInformation(), expectedItems);
+		
+		shoppingCart = new ShoppingCartPage(driver);
+		List<WebElement> rows = (List<WebElement>) driver.findElement(By.cssSelector("shopping-cart-table'] tr"));
+		System.out.println(rows.size());
+		/*int elementOnCart = 0;
 
+		for (WebElement itemOnCart : shoppingCart.getTableRowElement()) {
+	
 
-	}
+		String price = itemOnCart.findElement(By.cssSelector(".minicart-price >.price")).getText();
+		Double fixPriceOfItems = PriceCheck.convertToNumber(price);
+		System.out.print(fixPriceOfItems);
+		//double priceSum  = fixPriceOfItems;
+		elementOnCart++;
+		
+	   
+	} */
+		
+		
+		}
+		
+    
+
+	//}
     @Test (priority = 5)
 	public void ShopCardTests() {
 
@@ -229,19 +262,18 @@ public class CompleteTest extends BasePage  {
 		filtersPage.selectSecondPrice();
 
 		shoppingCart = new ShoppingCartPage(driver);
-		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		shoppingCart.hoverFistElementClickSizeAndAddToShop();
 		boolean successMsgFe =driver.findElement(By.cssSelector("div[role='alert']")).isDisplayed();
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        shoppingCart.clikshoppingCartLink();
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+        shoppingCart.clikcShoppingCartLink();
         String shoppingCartPageTitle=driver.getTitle();
 		assertEquals("Shopping Cart Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites",shoppingCartPageTitle);
+		
 
-        
-			
-	}
-
+        }
 }
+   
 
 
 	/*public void PageTitle() {

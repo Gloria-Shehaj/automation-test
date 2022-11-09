@@ -12,19 +12,40 @@ public class SignIn {
 	 WebDriver driver;
 	
 	
-	By SignInbtn = By.linkText("Sign In");
+	@FindBy (linkText = "Sign In")
+	WebElement SignInbtn;
+			
 	
-	By Email = By.cssSelector("input#email");
+	@FindBy (css = "input#email")
+	WebElement Email;
 	
-	By Password = By.cssSelector("fieldset #pass");
 	
-	By SignInsubmit = By.xpath("/html//form[@id='login-form']/fieldset[@class='fieldset login']//button[@name='send']");
+	@FindBy (css = "fieldset #pass")
+	WebElement Password;
 	
-	By UserName = By.xpath("//span[@class=\"logged-in\"]");
+	
+	@FindBy (id = "send2")
+	WebElement SignInsubmit;
+	
+	
+	@FindBy (xpath = "//span[@class=\"logged-in\"]" )
+	WebElement UserName;
+	
+	
+	@FindBy (xpath = "//span[@class=\"logged-in\"]")
+	WebElement GetUserName;
+	
+	@FindBy (xpath = "/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button")
+	WebElement UserProfile;
     
-	By UserProfile = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
 	
-	By SignOutbtn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[3]");
+	@FindBy (css = ".panel li:nth-of-type(2) [data-post]")
+	WebElement SignOutbtn;
+	
+	
+	@FindBy(css = ".panel [tabindex='-1']")
+	WebElement dropDownProfileBtn;
+	
 	
 	
 	public SignIn(WebDriver driver) {
@@ -35,34 +56,50 @@ public class SignIn {
 	
 	
 	public void clickSignInBtn() {
-		driver.findElement(SignInbtn).click();
+		SignInbtn.click();
    }
 	
 	public void enterEmailAndPassword(String email,String password) {
-		driver.findElement(Email).sendKeys(email);
-		driver.findElement(Password).sendKeys(password);
+		this.Email.sendKeys(email);
+		this.Password.sendKeys(password);
 	}
 	
 	public void clickSingInSubmit() {
-		driver.findElement(SignInsubmit).click();
+		SignInsubmit.click();
 	}
 	
-	public void usernameCheck() {	
-		driver.findElement(UserName).getAttribute("innerHTML");
-	}
+	//public void usernameCheck() {	
+	//	UserName.getAttribute("innerHTML");
+	//}
 	
 	public void clickUserProfile() {
-		driver.findElement(UserProfile);
+		UserProfile.click();
 	}
 	
 	public void clickSignOut() {
-		driver.findElement(SignOutbtn).click();
+		SignOutbtn.click();
 	}
 	
 	public void clickUserName() {
-		driver.findElement(UserName).click();
+		UserName.click();
 	}
+	
+	public String userNameCheck() {
+		return GetUserName.getAttribute("innerHTML");
+		
+	}
+	
+	public void dropDown() {
+		dropDownProfileBtn.click();
+		
+		
+	}
+
 }
+
+
+
+
 	
 	
 	

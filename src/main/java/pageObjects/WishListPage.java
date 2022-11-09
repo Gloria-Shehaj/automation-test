@@ -13,31 +13,31 @@ public class WishListPage {
 	
 	public WebDriver driver;
 	 
-	@FindBy (css=".product-items .product-item:nth-of-type(1)")
+	@FindBy (css = ".product-items .product-item:nth-of-type(1)")
 	WebElement firstElementontheList;
 	
-	@FindBy (css=".product-items .product-item:nth-of-type(2)")
+	@FindBy (css = ".product-items .product-item:nth-of-type(2)")
 	WebElement secondElementontheListe;
 	
-	@FindBy (xpath="/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[1]/div/div/div[3]/div/div[2]/a[1]")
+	@FindBy (xpath = "/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[1]/div/div/div[3]/div/div[2]/a[1]")
 	 WebElement fistElementWishButton;
 
 	
-	@FindBy (xpath="/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[4]/div/div[2]/a[1]")
+	@FindBy (xpath = "/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[4]/div/div[2]/a[1]")
 	WebElement secondElementWishButton;  
 	
-	@FindBy(css=".product-addto-links>.towishlist>span")
+	@FindBy(css = ".product-addto-links>.towishlist>span")
 	WebElement wishButtonFirstElement;
 	
 	
 	
-	@FindBy(css="[data-bind='scope\\: \\'messages\\''] .messages")
+	@FindBy(css = "[data-bind='scope\\: \\'messages\\''] .messages")
 	WebElement successMsgWishList;
 	
 	//@FindBy(css="#wishlist-view-form > div.products-grid.wishlist >ol > li")
 	//List<WebElement> wishlistItems;
 
-	@FindBy(css="body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.customer-welcome.active > div > ul > li.link.wishlist > a > span")
+	@FindBy(css = ".panel .counter")
 	 WebElement wishListItemsNumber;
 	
 	

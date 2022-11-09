@@ -1,10 +1,15 @@
 package base;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
 public class PriceCheck {
 	
-	public Double convertToNumber(String price) {
+	public static Double convertToNumber(String price) {
 		String fixedPrice = price.substring(1);
-		return Double.valueOf(fixedPrice);
-	} 
+		return Double.parseDouble(fixedPrice);
+		
+	
+	} 	
 
 }

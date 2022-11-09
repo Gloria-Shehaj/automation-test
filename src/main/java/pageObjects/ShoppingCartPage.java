@@ -1,5 +1,8 @@
 package pageObjects;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,8 +67,16 @@ public class ShoppingCartPage {
 	@FindBy(css=".cart.item a[title='Remove item']")
 	WebElement deleteSecondProduct;
 	
+	@FindBy(id = "shopping-cart-table")
+	WebElement allTable;
+	
+	@FindBy(css = ".item-info")
+    public List<WebElement> tableRowElement;
 	
 	
+	@FindBy(css = "tbody> .item-info > .col.subtotal > .price-excluding-tax > .cart-price > .price")
+	WebElement elementPrice;
+ 
 	
 	
 	
@@ -84,18 +95,30 @@ public class ShoppingCartPage {
 
 	}
 
-//	
 	public String getCardItemsNumber() {
 		return itemsNumberOnCard.getText();
 	}
-	
-	public void clikshoppingCartLink() {
+
+	public void clikcShoppingCartLink() {
 		shoppingCartLink.click();
+
+	}
+
+    public List<WebElement> getListOfProductsOnCart() {
+	  return allTable.findElements((By.tagName("tr")));	
+		}
+
+	
+	public List<WebElement> getTableRowElement() {
+		return tableRowElement; 
 		
 	}
+	
+	public List<WebElement> elementPrice() {
+		return tableRowElement; 
+	}	
+	
 }
-	 
-	 
 	 
     
 

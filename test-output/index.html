@@ -159,35 +159,14 @@
                   <a name="wishListControlTest">
                   </a> <!-- wishListControlTest -->
                   <span class="method-name">wishListControlTest</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;body &gt; div.page-wrapper &gt; header &gt; div.panel.wrapper &gt; div &gt; ul &gt; li.customer-welcome.active &gt; div &gt; ul &gt; li.link.wishlist &gt; a &gt; span&quot;}
-  (Session info: chrome=107.0.5304.87)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Users-MacBook-Pro.local&apos;, ip: &apos;fd9c:69d1:b3a5:e600:430:4951:aa90:8bda%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.2.1&apos;, java.version: &apos;17.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/xk/d_2_kg7n7mz...}, goog:chromeOptions: {debuggerAddress: localhost:57371}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 32619e2e65673fec5368373b4c5f105b
-*** Element info: {Using=css selector, value=body &gt; div.page-wrapper &gt; header &gt; div.panel.wrapper &gt; div &gt; ul &gt; li.customer-welcome.active &gt; div &gt; ul &gt; li.link.wishlist &gt; a &gt; span}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.getText(Unknown Source)
-	at pageObjects.WishListPage.getItemsNumberInformation(WishListPage.java:92)
-	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControlTest(CompleteTest.java:202)
+                  <div class="stack-trace">java.lang.AssertionError: expected [2 items] but found []
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at com.softwaretestingboard.magento.miniproject.CompleteTest.wishListControlTest(CompleteTest.java:218)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -261,7 +240,7 @@ Session ID: 32619e2e65673fec5368373b4c5f105b
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/xk/d_2_kg7n7mzbtg744fqlslgc0000gn/T/testng-eclipse-2134174151/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/xk/d_2_kg7n7mzbtg744fqlslgc0000gn/T/testng-eclipse-2031839935/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -312,30 +291,30 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'wishListControlTest')
+data.setCell(0, 1, 'LogInTest')
 data.setCell(0, 2, 'com.softwaretestingboard.magento.miniproject.CompleteTest')
-data.setCell(0, 3, 18155);
+data.setCell(0, 3, 8301);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'ShopCardTests')
 data.setCell(1, 2, 'com.softwaretestingboard.magento.miniproject.CompleteTest')
-data.setCell(1, 3, 10771);
+data.setCell(1, 3, 8241);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'LogInTest')
+data.setCell(2, 1, 'wishListControlTest')
 data.setCell(2, 2, 'com.softwaretestingboard.magento.miniproject.CompleteTest')
-data.setCell(2, 3, 9041);
+data.setCell(2, 3, 8212);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'RegistrationTest')
 data.setCell(3, 2, 'com.softwaretestingboard.magento.miniproject.CompleteTest')
-data.setCell(3, 3, 8735);
+data.setCell(3, 3, 6538);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'CheckPageFilters')
 data.setCell(4, 2, 'com.softwaretestingboard.magento.miniproject.CompleteTest')
-data.setCell(4, 3, 3720);
+data.setCell(4, 3, 3870);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 50 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -368,33 +347,33 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">generateData</span>
-                <span class="method-start">7356 ms</span>
+                <span class="method-start">4565 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">RegistrationTest</span>
-                <span class="method-start">7364 ms</span>
+                <span class="method-start">4575 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">LogInTest</span>
-                <span class="method-start">16104 ms</span>
+                <span class="method-start">11119 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">CheckPageFilters</span>
-                <span class="method-start">25147 ms</span>
+                <span class="method-start">19421 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">wishListControlTest</span>
-                <span class="method-start">28868 ms</span>
+                <span class="method-start">23292 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ShopCardTests</span>
-                <span class="method-start">47456 ms</span>
+                <span class="method-start">31926 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">end</span>
-                <span class="method-start">58228 ms</span>
+                <span class="method-start">40168 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

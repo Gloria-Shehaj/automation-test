@@ -50,16 +50,7 @@ public class FiltersPage {
 	// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]")));
 	// assertEquals(6, notebooksPage.getSizeOfProductsDisplayed());
 
-	// By topsMenu = By.xpath("//*[@id=\"ui-id-9\"]");
 
-	// By jacketsMenu = By.xpath("//*[@id=\\\"ui-id-11\\\"]");
-
-	// By colorMenu = By.xpath("//div[@id='narrow-by-list']/div[4]");
-
-	// By bluecolor =
-	// By.xpath("//a[2]/div[@safeclass~'\\bcolor\\b.*\\bswatch-option\\b']");
-
-	// Actions actions;
 
 	public FiltersPage(WebDriver driver) {
 		this.driver = driver;
