@@ -10,13 +10,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FiltersPage {
-	
+
 	public WebDriver driver;
-	
-	//WebElement womenMenu = driver.findElement(By.linkText("Women"));
-	//WebElement topsMenu = driver.findElement( By.xpath("//*[@id=\"ui-id-9\"]"));
-	//WebElement jacketsMenu = driver.findElement( By.xpath("//*[@id=\\\"ui-id-11\\\"]"));
-     
+
 	@FindBy(linkText = "Women")
 	WebElement womenMenu;
 
@@ -46,11 +42,6 @@ public class FiltersPage {
 
 	@FindBy(xpath = "//*[@id=\"layered-filter-block\"]/div[2]/div[1]/ol/li[1]/a")
 	WebElement removePriceBtn;
-
-	// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]")));
-	// assertEquals(6, notebooksPage.getSizeOfProductsDisplayed());
-
-
 
 	public FiltersPage(WebDriver driver) {
 		this.driver = driver;
@@ -95,4 +86,3 @@ public class FiltersPage {
 	}
 
 }
-//}
