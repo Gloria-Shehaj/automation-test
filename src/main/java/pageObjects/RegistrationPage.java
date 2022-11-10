@@ -38,6 +38,9 @@ public class RegistrationPage {
 	@FindBy(css = "[data-ui-id='message-success']")
 	WebElement SuccessMessage;
 
+	@FindBy(xpath=".panel.header .customer-welcome .customer-name>.action.switch")
+	public WebElement ProfileDropDown;
+	
 	public RegistrationPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

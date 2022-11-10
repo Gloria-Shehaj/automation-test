@@ -36,7 +36,7 @@ import static org.testng.Assert.assertTrue;
 
 @Test
 public class CompleteTest extends BasePage {
-	SignIn signIn;
+	SignInPage signInPage;
 	RegistrationPage registrationPage;
 	FiltersPage filtersPage;
 	String email;
@@ -72,8 +72,6 @@ public class CompleteTest extends BasePage {
 		 * this.fakedata.setLastName(person.getLastName());
 		 * this.fakedata.setEmail(person.getEmail());
 		 * this.fakedata.setPassword(person.getPassword());
-		 * 
-		 * System.out.println(fakedata.getFirstName());
 		 */
 	}
 
@@ -83,7 +81,7 @@ public class CompleteTest extends BasePage {
 		driver.quit();
 	}
 
-	@Test(priority = 1)
+	@Test(priority =1)
 	@Description("Testing all registration steps, checking urls, checking showing success messages")
 	public void RegistrationTest() throws InterruptedException {
 		driver.manage().window().maximize();
@@ -97,87 +95,81 @@ public class CompleteTest extends BasePage {
 		String pageTitle = driver.getTitle();
 		assertEquals(pageTitle,
 				"My Account Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-		System.out.println(pageTitle);
 
 		assertTrue(registrationPage.messageDisplayed());
-
-		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
+		
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		/*WebElement profileDd = driver.findElement(By.xpath(".panel.header .customer-welcome .customer-name>.action.switch"));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", (element));
+		executor.executeScript("arguments[0].click();", (profileDd));
 
-		signIn = new SignIn(driver);
-		signIn.clickSignOut();
+		signInPage = new SignInPage(driver);
+		signInPage.clickSignOut();*/
 	}
 
-	@Test(priority = 2)
+	@Test(priority=2)
 	@Description("Testing all LogIn steps,checking if username is displayed correctly")
 	public void LogInTest() throws InterruptedException {
-		signIn = new SignIn(driver);
-		signIn.clickSignInBtn();
-		signIn.enterEmailAndPassword(email, "Test12345");
-		signIn.clickSingInSubmit();
+		signInPage = new SignInPage(driver);
+		signInPage.clickSignInBtn();
+		signInPage.enterEmailAndPassword(email, "Test12345");
+		signInPage.clickSingInSubmit();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		signIn.clickUserName();
-		String expectedRes = signIn.userNameCheck();
+		signInPage.clickUserName();
+		String expectedRes = signInPage.userNameCheck();
 		String actualRes = "Welcome, Gloria Shehaj!";
 		assertEquals(expectedRes, actualRes);
-		System.out.println(expectedRes);
-		signIn.dropDown();
-		signIn.clickSignOut();
-		signIn.clickSignInBtn();
-		signIn.enterEmailAndPassword(email, "Test12345");
-		signIn.clickSingInSubmit();
+		/*signInPage.dropDown();
+		signInPage.clickSignOut();
+		signInPage.clickSignInBtn();
+		signInPage.enterEmailAndPassword(email, "Test12345");
+		signInPage.clickSingInSubmit();*/
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority=3)
 	@Description("Testing color and price filters, checking if items are displayed as expected")
 	public void CheckPageFilters() throws InterruptedException {
 		filtersPage = new FiltersPage(driver);
 
-		WebElement mainMenu = driver.findElement(By.linkText("Women"));
-
+		
 		Actions actions = new Actions(driver);
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		actions.moveToElement(mainMenu).moveToElement(driver.findElement(By.xpath("//*[@id=\"ui-id-9\"]")))
-				.moveToElement(driver.findElement(By.xpath("//*[@id=\"ui-id-11\"]"))).click().build().perform();
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		actions.moveToElement(filtersPage.womenMenu).moveToElement(filtersPage.topsMenu)
+		.moveToElement(filtersPage.jacketsMenu).click().build().perform();
+			
 		filtersPage.clickColorMenu();
 		filtersPage.clickBlueColor();
 
-		System.out.println(filtersPage.getSizeOfProductsDisplayed());
-
 		int actualBlueElements = 0;
-		for (WebElement item : filtersPage.getListOfSellingProducts()) {
+		for (WebElement item : filtersPage.getProducts()) {
 			WebElement blueDiv = item
 					.findElement(By.xpath("//div[contains(@class,'selected') and @option-label='Blue']"));
 			if (blueDiv != null)
 				actualBlueElements++;
 
 		}
-		assertEquals(filtersPage.getSizeOfProductsDisplayed(), actualBlueElements);
-
+		assertEquals(filtersPage.getProducts().size(), actualBlueElements);
+        
 		filtersPage.openPriceFilters();
 		filtersPage.selectSecondPrice();
-		System.out.println(filtersPage.getSizeOfProductsDisplayed());
 		int expectedResult = 2;
-		assertEquals(filtersPage.getSizeOfProductsDisplayed(), expectedResult);
+		assertEquals(filtersPage.getProducts().size(), expectedResult);
 
-		int elementWithSelectedPrice = 0;
-		for (WebElement item : filtersPage.getListOfSellingProducts()) {
+		int actualProductsInPriceRange = 0;
+		for (WebElement item : filtersPage.getProducts()) {
 
 			String priceStr = item.findElement(By.cssSelector(".price-wrapper > .price")).getText();
 			Double fixPrice = PriceCheck.convertToNumber(priceStr);
-			System.out.print(fixPrice);
 			if (fixPrice > 50 & fixPrice < 59.99)
-				elementWithSelectedPrice++;
-
+				actualProductsInPriceRange++;
+           
 		}
+		assertEquals(actualProductsInPriceRange, expectedResult);
+		
 	}
 
-	@Test(priority = 4)
+	@Test(priority=4)
 	@Description("Testing wish list options and the items number displayed")
 	public void wishListControlTest() throws InterruptedException {
 
@@ -186,15 +178,10 @@ public class CompleteTest extends BasePage {
 		filtersPage.removeSelectedPrice();
 
 		int actualnumber = 2;
-		if (filtersPage.getSizeOfProductsDisplayed() > actualnumber)
-			System.out.println("Success,the number is increased");
-		else
-			System.out.println("Error");
-
-		wishListPage = new WishListPage(driver);
-
+		assertTrue(filtersPage.getProducts().size() > actualnumber);
 		
 
+		wishListPage = new WishListPage(driver);
 		wishListPage.hoverFistElementclickWishList();
 		assertTrue(wishListPage.successMsgDisplayed());
 
@@ -207,46 +194,42 @@ public class CompleteTest extends BasePage {
 
 		driver.navigate().refresh();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebElement element = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
+        
+		
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		WebElement profileDd = driver.findElement(By.xpath(".panel.header .customer-welcome .customer-name>.action.switch"));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", (element));
+		executor.executeScript("arguments[0].click();", (profileDd));
 
-		System.out.println(wishListPage.getItemsNumberInformation());
 		String expectedItems = "2 items";
-		wait.until(ExpectedConditions.textToBe(
-				By.cssSelector(
-						".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist > a > span"),
-				("2 items")));
 		assertEquals(wishListPage.getItemsNumberInformation(), expectedItems);
 
 	}
 
 	// }
-	@Test(priority = 5)
+	@Test(priority=5)
 	@Description("Testing Add to Cart, checking success msg, verifying navigation to the correct page, verifyinf total price, deleting items")
 	public void ShopCartTests() throws InterruptedException {
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		filtersPage = new FiltersPage(driver);
-		WebElement mainMenu = driver.findElement(By.linkText("Women"));
-
+		
 		Actions actions = new Actions(driver);
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		actions.moveToElement(mainMenu).moveToElement(driver.findElement(By.xpath("//*[@id=\"ui-id-9\"]")))
-				.moveToElement(driver.findElement(By.xpath("//*[@id=\"ui-id-11\"]"))).click().build().perform();
-
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        actions.moveToElement(filtersPage.womenMenu).moveToElement(filtersPage.topsMenu)
+		.moveToElement(filtersPage.jacketsMenu).click().build().perform();
+		
 		filtersPage.clickColorMenu();
 		filtersPage.clickBlueColor();
 		filtersPage.openPriceFilters();
 		filtersPage.selectSecondPrice();
 
 		shoppingCartPage = new ShoppingCartPage(driver);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		shoppingCartPage.hoverElementClickSizeAndAddToShop();
-		assertTrue(shoppingCartPage.successMsgDisplayed());
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		assertTrue(shoppingCartPage.successMessage.isDisplayed());
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		shoppingCartPage.clikcShoppingCartLink();
 		String shoppingCartPageTitle = driver.getTitle();
 		assertEquals(
@@ -257,23 +240,23 @@ public class CompleteTest extends BasePage {
 
 		double TotalSum = 0;
 
-		for (WebElement itemOnCart : shoppingCartPage.getcartElementPrices()) {
+		for (WebElement itemOnCart : shoppingCartPage.cartItemPrices) {
 
 			double fixPriceOfItems = PriceCheck.convertToNumber(itemOnCart.getText());
 			TotalSum += fixPriceOfItems;
 
 		}
 
-		System.out.println(shoppingCartPage.getTotalPrice());
 		double TotalPrice = PriceCheck.convertToNumber(shoppingCartPage.getTotalPrice());
 		assertEquals(TotalSum, TotalPrice);
 
 		shoppingCartPage.getDeleteButtonsNumber();
-		System.out.println("printo Numrin e butonave" + shoppingCartPage.getDeleteButtonsNumber());
+		
 
 		while (shoppingCartPage.getDeleteButtonsNumber() > 0) {
 
 			List<WebElement> deleteButton = shoppingCartPage.getDeleteButtons();
+			
 			deleteButton.get(0).click();
 			
 

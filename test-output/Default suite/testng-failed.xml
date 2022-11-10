@@ -5,11 +5,13 @@
     <classes>
       <class name="com.softwaretestingboard.magento.miniproject.CompleteTest">
         <methods>
+          <include name="ShopCartTests"/>
           <include name="end"/>
+          <include name="wishListControlTest"/>
           <include name="setup"/>
           <include name="generateData"/>
+          <include name="CheckPageFilters"/>
           <include name="LogInTest"/>
-          <include name="RegistrationTest"/>
         </methods>
       </class> <!-- com.softwaretestingboard.magento.miniproject.CompleteTest -->
     </classes>

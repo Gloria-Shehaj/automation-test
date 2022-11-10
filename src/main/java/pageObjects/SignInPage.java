@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignIn {
+public class SignInPage {
 
 	WebDriver driver;
 
@@ -37,8 +37,11 @@ public class SignIn {
 
 	@FindBy(css = ".panel [tabindex='-1']")
 	WebElement dropDownProfileBtn;
+	
+	@FindBy(css=".panel.header .customer-welcome .customer-name>.action.switch")
+	public WebElement ProfileDropDown;
 
-	public SignIn(WebDriver driver) {
+	public SignInPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 

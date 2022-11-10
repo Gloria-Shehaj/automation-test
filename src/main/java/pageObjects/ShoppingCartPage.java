@@ -56,10 +56,13 @@ public class ShoppingCartPage {
 	WebElement deleteSecondProduct;
 
 	@FindBy(css = "div[role='alert']")
-	WebElement successMessageDisplayed;
+	public WebElement successMessage;
 
 	@FindBy(css = "#shopping-cart-table .item-info .col.subtotal .cart-price .price")
-	public List<WebElement> cartElementPrices;
+	public List<WebElement> cartItemPrices;
+	
+	@FindBy(css="#shopping-cart-table .item-info")
+	public List<WebElement> cartItems;
 
 	@FindBy(css = ".grand.totals > .amount")
 	WebElement totalPrice;
@@ -90,16 +93,6 @@ public class ShoppingCartPage {
 
 	public void clikcShoppingCartLink() {
 		shoppingCartLink.click();
-
-	}
-
-	public Boolean successMsgDisplayed() {
-		Boolean status = successMessageDisplayed.isDisplayed();
-		return status;
-	}
-
-	public List<WebElement> getcartElementPrices() {
-		return cartElementPrices;
 
 	}
 

@@ -14,13 +14,13 @@ public class FiltersPage {
 	public WebDriver driver;
 
 	@FindBy(linkText = "Women")
-	WebElement womenMenu;
+	public WebElement womenMenu;
 
 	@FindBy(xpath = "//*[@id=\"ui-id-9\"]")
-	WebElement topsMenu;
+	public WebElement topsMenu;
 
 	@FindBy(xpath = "//*[@id=\\\"ui-id-11\\\"]")
-	WebElement jacketsMenu;
+	public WebElement jacketsMenu;
 
 	@FindBy(css = "[role='presentation']:nth-of-type(4) [role='tab']")
 	WebElement colorMenu;
@@ -69,7 +69,7 @@ public class FiltersPage {
 		return sellingProducts.size();
 	}
 
-	public List<WebElement> getListOfSellingProducts() {
+	public List<WebElement> getProducts() {
 		return sellingProducts;
 	}
 
