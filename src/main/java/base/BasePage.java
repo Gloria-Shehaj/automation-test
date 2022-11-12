@@ -35,12 +35,12 @@ public class BasePage {
 			driver = new ChromeDriver();
 		} else if (prop.getProperty("browser").equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + "src/main/java/drivers/geckodriver/");
+					System.getProperty("user.dir") + "/src/main/java/drivers/geckodriver/");
 			driver = new FirefoxDriver();
 		}
 
 		driver.manage().window().fullscreen();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 
 		return driver;

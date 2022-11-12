@@ -49,11 +49,11 @@ public class ShoppingCartPage {
 	@FindBy(css = ".grand.totals > .amount  .price")
 	WebElement totalAmount;
 
-	@FindBy(css = "tbody:nth-of-type(1) a[title='Remove item']")
-	WebElement deleteFirstProduct;
+	//@FindBy(css = "tbody:nth-of-type(1) a[title='Remove item']")
+	//WebElement deleteFirstProduct;
 
-	@FindBy(css = ".cart.item a[title='Remove item']")
-	WebElement deleteSecondProduct;
+	//@FindBy(css = ".cart.item a[title='Remove item']")
+	//WebElement deleteSecondProduct;
 
 	@FindBy(css = "div[role='alert']")
 	WebElement successMessageDisplayed;

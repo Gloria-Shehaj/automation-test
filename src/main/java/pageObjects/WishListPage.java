@@ -1,12 +1,9 @@
 package pageObjects;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class WishListPage {
@@ -24,14 +21,14 @@ public class WishListPage {
 
 	@FindBy(xpath = "/html/body/div[2]/main/div[3]/div[1]/div[3]/ol/li[2]/div/div/div[4]/div/div[2]/a[1]")
 	WebElement secondElementWishButton;
-
-	@FindBy(css = ".product-addto-links>.towishlist>span")
-	WebElement wishButtonFirstElement;
+	
+	@FindBy(css=".update")
+	WebElement undateWishList;
 
 	@FindBy(css = "div[role='alert'] > .message.message-success.success")
 	WebElement successMsgWishList;
 
-	@FindBy(css = ".panel .counter")
+	@FindBy(css = ".header.panel > .header.links  .customer-menu > .header.links > .link.wishlist > a > span")
 	WebElement wishListItemsNumber;
 
 	public WishListPage(WebDriver driver) {
@@ -54,15 +51,6 @@ public class WishListPage {
 		secondElementontheListe.click();
 	}
 
-	public void clickAddToWishList() {
-		wishButtonFirstElement.click();
-
-	}
-
-	public void clickWishElement() {
-		fistElementWishButton.click();
-	}
-
 	public void hoverSecondElementclickWishList() {
 
 		Actions hover = new Actions(driver);
@@ -76,6 +64,10 @@ public class WishListPage {
 
 	public String getItemsNumberInformation() {
 		return wishListItemsNumber.getText();
+	}
+	
+	public void clickUpdateWishListButton() {
+		undateWishList.click();
 	}
 
 }

@@ -1,13 +1,12 @@
 package pageObjects;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class FiltersPage {
 
@@ -17,10 +16,10 @@ public class FiltersPage {
 	WebElement womenMenu;
 
 	@FindBy(xpath = "//*[@id=\"ui-id-9\"]")
-	WebElement topsMenu;
+	public WebElement topsMenu;
 
 	@FindBy(xpath = "//*[@id=\\\"ui-id-11\\\"]")
-	WebElement jacketsMenu;
+	public WebElement jacketsMenu;
 
 	@FindBy(css = "[role='presentation']:nth-of-type(4) [role='tab']")
 	WebElement colorMenu;
@@ -51,9 +50,9 @@ public class FiltersPage {
 
 	public void hoverJacketsMenu() {
 
-		// Actions hover = new Actions(driver);
+	 Actions hover = new Actions(driver);
 
-		// hover.moveToElement(womenMenu).moveToElement(topsMenu).moveToElement(jacketsMenu).click().build().perform();
+	 hover.moveToElement(womenMenu).moveToElement(topsMenu).moveToElement(jacketsMenu).click().build().perform();
 	}
 
 	public void clickColorMenu() {
@@ -69,7 +68,7 @@ public class FiltersPage {
 		return sellingProducts.size();
 	}
 
-	public List<WebElement> getListOfSellingProducts() {
+	public List<WebElement> getProducts() {
 		return sellingProducts;
 	}
 
